@@ -1,0 +1,13 @@
+body {
+    background-image: url(../images/wp1843999-numbers-wallpapers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.row {
+    min-height: 97vh;
+}
+
+#values , #next{
+   min-height: 35px;
+}
