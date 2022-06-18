@@ -1,14 +1,14 @@
 const numbers = document.getElementById('numbers')
 const values = document.getElementById('values')
-const nextNo = document.getElementById('next')
+const sumvalue = document.getElementById('sum')
 numbers.focus()
-let arr = [1, 4, 7, 2, 5, 9, 3];
+let arr = [];
 
 const btnadd = document.getElementById('add')
 btnadd.addEventListener('click', () => {
     // Adds numbers to array
     let i = arr.length;
-    arr[i] = numbers.value
+    arr[i] = parseInt(numbers.value)
     if (i >= 1) {
         values.innerHTML += ', '
     }
@@ -27,19 +27,22 @@ numbers.addEventListener("keypress", function (event) {
 })
 
 const btnCalc = document.getElementById('calculate')
-btnCalc.addEventListener('click', () => {
+btnCalc.addEventListener('click', (sum) => {
+sum = 0 
+for (let i = 0 ; i < arr.length; i++) {
+    sum += arr[i] 
+}
 
-    const iterator = arr.values();
-    let x = iterator.next().value;
-    nextNo.innerHTML += x 
+sumvalue.innerHTML = sum
 })
 
 const btnReset = document.getElementById('reset')
 btnReset.addEventListener('click', () => {
+    numbers.focus()
     numbers.value = '';
     values.innerHTML = '';
-    nextNo.innerHTML = '';
-    arr = [1, 4, 7, 2, 5, 9, 3]
+    sumvalue.innerHTML = '';
+    arr = []
 })
 
 //copyright
