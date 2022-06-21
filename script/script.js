@@ -7,15 +7,12 @@ let arr = [];
 const btnadd = document.getElementById('add')
 btnadd.addEventListener('click', () => {
     // Adds numbers to array
-    let i = arr.length;
-    arr[i] = parseInt(numbers.value)
-    if (i >= 1) {
-        values.innerHTML += ', '
-    }
-    values.innerHTML += (arr[i])
+    arr.push(parseInt(numbers.value))
+
+    values.innerHTML = (arr)
     numbers.focus()
     numbers.value = ''
-    i++;
+    
 })
 
 // adds numbers to array on enter 
@@ -26,13 +23,13 @@ numbers.addEventListener("keypress", function (event) {
     }
 })
 
+// Calculates Sum
 const btnCalc = document.getElementById('calculate')
 btnCalc.addEventListener('click', (sum) => {
 sum = 0 
 for (let i = 0 ; i < arr.length; i++) {
     sum += arr[i] 
 }
-
 sumvalue.innerHTML = sum
 })
 
@@ -49,5 +46,3 @@ btnReset.addEventListener('click', () => {
 let year = new Date().getFullYear()
 document.getElementById('copyright').innerHTML = '&copyAbdus-Samad Charles ' + year;
 document.getElementById('copyright').innerHTML = '&copyAbdus-Samad Charles ' + year;
-
-// [1,4,7,2,5,9,3];
